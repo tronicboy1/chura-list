@@ -1,26 +1,27 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import List from "./components/List";
+import NewItem from "./components/NewItem";
 
-function App() {
+import ListModel from "./models/list-model";
+
+const App: React.FC = () => {
+  const DUMMY_DATA: ListModel = {
+    item1: {
+      title: "Item 1 Title",
+      contents: "Item 1 Contents",
+      createdAt: new Date(),
+    },
+  };
+
+  const addNewItem = (title: string, content: string) => {};
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <NewItem addNewItem={addNewItem} />
+      <List data={DUMMY_DATA} />
+    </>
   );
-}
+};
 
 export default App;
