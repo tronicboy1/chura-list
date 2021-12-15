@@ -23,7 +23,7 @@ type ReturnObject = {
 const useFirebase: (path: string) => ReturnObject = (path) => {
   const [data, setData] = useState<ListModel>({});
   const [errors, setErrors] = useState<{} | null>(null);
-  const [database, _] = useState(() => {
+  const [database, _setDatabase] = useState(() => {
     const database = getDatabase(firebaseApp);
     if (document.location.hostname === "localhost") {
       connectDatabaseEmulator(database, "localhost", 9000);
@@ -35,7 +35,7 @@ const useFirebase: (path: string) => ReturnObject = (path) => {
   useEffect(() => {
     //define what area of the database you want to access
     const pathRef = ref(database, path);
-    onValue(
+    const stopOnValue = onValue(
       pathRef,
       (snapshot) => {
         //send new data to react with setData every time information changed on realtime db
@@ -50,6 +50,9 @@ const useFirebase: (path: string) => ReturnObject = (path) => {
         setErrors(error);
       }
     );
+    return () => {
+      stopOnValue();
+    };
   }, [path, database]);
 
   //logic to add new entrie to RealtimeDB
