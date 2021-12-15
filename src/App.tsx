@@ -14,6 +14,7 @@ const App: React.FC = () => {
       createdAt: new Date().toISOString(),
     });
   };
+  console.log(data);
 
   return (
     <>

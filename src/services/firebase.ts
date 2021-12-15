@@ -2,13 +2,12 @@ import { initializeApp } from "firebase/app";
 
 //wev application config stored in firebase project settings
 const firebaseConfig = {
-  apiKey: "AIzaSyA739qPqWb7VONGDCMcXuiecxrc403Rgwo",
-  authDomain: "chura-list.firebaseapp.com",
-  databaseURL: "https://chura-list-default-rtdb.firebaseio.com",
-  projectId: "chura-list",
-  storageBucket: "chura-list.appspot.com",
-  messagingSenderId: "246414541051",
-  appId: "1:246414541051:web:f8ec4d75b9fe1efa29b05e"
+  apiKey: "AIzaSyDVjTIij66ymVwznxveDF_PmzfSf4Bz35g",
+  authDomain: "list-app-practice.firebaseapp.com",
+  projectId: "list-app-practice",
+  storageBucket: "list-app-practice.appspot.com",
+  messagingSenderId: "171407132733",
+  appId: "1:171407132733:web:737da3c77e997add09c254"
 };
 
 const firebaseApp = initializeApp(firebaseConfig);

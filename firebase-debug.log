@@ -1,0 +1,61 @@
+[debug] [2021-12-15T08:49:23.831Z] ----------------------------------------------------------------------
+[debug] [2021-12-15T08:49:23.833Z] Command:       /usr/local/bin/node /usr/local/bin/firebase emulators:start
+[debug] [2021-12-15T08:49:23.833Z] CLI Version:   9.23.1
+[debug] [2021-12-15T08:49:23.833Z] Platform:      darwin
+[debug] [2021-12-15T08:49:23.833Z] Node Version:  v16.13.0
+[debug] [2021-12-15T08:49:23.834Z] Time:          Wed Dec 15 2021 17:49:23 GMT+0900 (日本標準時)
+[debug] [2021-12-15T08:49:23.834Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2021-12-15T08:49:23.922Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-12-15T08:49:23.923Z] > authorizing via signed-in user (a.inoue@churadata.okinawa)
+[info] i  emulators: Starting emulators: auth, functions, database {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: auth, functions, database"}}
+[debug] [2021-12-15T08:49:23.943Z] [hub] writing locator at /var/folders/lg/cc9j4ts91j36yg7b3dyp02bm0000gn/T/hub-list-app-practice.json
+[warn] ⚠  functions: The functions emulator is configured but there is no functions source directory. Have you run firebase init functions? {"metadata":{"emulator":{"name":"functions"},"message":"The functions emulator is configured but there is no functions source directory. Have you run \u001b[1mfirebase init functions\u001b[22m?"}}
+[debug] [2021-12-15T08:49:23.965Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/list-app-practice [none]
+[debug] [2021-12-15T08:49:24.572Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/list-app-practice 200
+[debug] [2021-12-15T08:49:24.572Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/list-app-practice {"projectId":"list-app-practice","projectNumber":"171407132733","displayName":"list-app-practice","name":"projects/list-app-practice","resources":{"hostingSite":"list-app-practice"},"state":"ACTIVE"}
+[debug] [2021-12-15T08:49:24.572Z] database rules config:  [{"instance":"list-app-practice-default-rtdb","rules":"/Users/austin.mayer/Documents/firebase-app/chura-list/database.rules.json"}]
+[debug] [2021-12-15T08:49:24.575Z] Ignoring unsupported arg: projectId {"metadata":{"emulator":{"name":"database"},"message":"Ignoring unsupported arg: projectId"}}
+[debug] [2021-12-15T08:49:24.575Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"database"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2021-12-15T08:49:24.575Z] Ignoring unsupported arg: rules {"metadata":{"emulator":{"name":"database"},"message":"Ignoring unsupported arg: rules"}}
+[debug] [2021-12-15T08:49:24.575Z] Starting Database Emulator with command {"binary":"java","args":["-Duser.language=en","-jar","/Users/austin.mayer/.cache/firebase/emulators/firebase-database-emulator-v4.7.2.jar","--host","localhost","--port",9000],"optionalArgs":["port","host","functions_emulator_port","functions_emulator_host"],"joinArgs":false} {"metadata":{"emulator":{"name":"database"},"message":"Starting Database Emulator with command {\"binary\":\"java\",\"args\":[\"-Duser.language=en\",\"-jar\",\"/Users/austin.mayer/.cache/firebase/emulators/firebase-database-emulator-v4.7.2.jar\",\"--host\",\"localhost\",\"--port\",9000],\"optionalArgs\":[\"port\",\"host\",\"functions_emulator_port\",\"functions_emulator_host\"],\"joinArgs\":false}"}}
+[info] i  database: Database Emulator logging to database-debug.log {"metadata":{"emulator":{"name":"database"},"message":"Database Emulator logging to \u001b[1mdatabase-debug.log\u001b[22m"}}
+[debug] [2021-12-15T08:49:25.980Z] 17:49:25.979 [NamespaceSystem-akka.actor.default-dispatcher-5] INFO akka.event.slf4j.Slf4jLogger - Slf4jLogger started
+ {"metadata":{"emulator":{"name":"database"},"message":"17:49:25.979 [NamespaceSystem-akka.actor.default-dispatcher-5] INFO akka.event.slf4j.Slf4jLogger - Slf4jLogger started\n"}}
+[debug] [2021-12-15T08:49:26.165Z] 17:49:26.165 [main] INFO com.firebase.server.forge.App$ - Listening at localhost:9000
+ {"metadata":{"emulator":{"name":"database"},"message":"17:49:26.165 [main] INFO com.firebase.server.forge.App$ - Listening at localhost:9000\n"}}
+[debug] [2021-12-15T08:49:29.356Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2021-12-15T08:49:29.356Z] Ignoring unsupported arg: port {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: port"}}
+[debug] [2021-12-15T08:49:29.356Z] Starting Emulator UI with command {"binary":"node","args":["/Users/austin.mayer/.cache/firebase/emulators/ui-v1.6.4/server.bundle.js"],"optionalArgs":[],"joinArgs":false} {"metadata":{"emulator":{"name":"ui"},"message":"Starting Emulator UI with command {\"binary\":\"node\",\"args\":[\"/Users/austin.mayer/.cache/firebase/emulators/ui-v1.6.4/server.bundle.js\"],\"optionalArgs\":[],\"joinArgs\":false}"}}
+[info] i  ui: Emulator UI logging to ui-debug.log {"metadata":{"emulator":{"name":"ui"},"message":"Emulator UI logging to \u001b[1mui-debug.log\u001b[22m"}}
+[debug] [2021-12-15T08:49:29.443Z] Web / API server started at localhost:3009
+ {"metadata":{"emulator":{"name":"ui"},"message":"Web / API server started at localhost:3009\n"}}
+[debug] [2021-12-15T08:49:29.620Z] >>> HTTP REQUEST PUT http://localhost:9000/.settings/rules.json?ns=list-app-practice-default-rtdb  
+ {
+  "rules": {
+    ".read": true,
+    ".write": true
+  }
+}
+
+[debug] [2021-12-15T08:49:29.673Z] <<< HTTP RESPONSE 200 {"content-length":"15","content-type":"application/json; charset=utf-8","access-control-allow-origin":"*","cache-control":"no-cache","x-firebase-project-id":"list-app-practice-default-rtdb","x-firebase-project-number":"123456789","x-firebase-uuid":"dd36ad7c-e4ce-4f06-a289-7d5e5915f0b4"}
+[info] 
+┌─────────────────────────────────────────────────────────────┐
+│ ✔  All emulators ready! It is now safe to connect your app. │
+│ i  View Emulator UI at http://localhost:3009                │
+└─────────────────────────────────────────────────────────────┘
+
+┌────────────────┬──────────────────────────────────┬────────────────────────────────┐
+│ Emulator       │ Host:Port                        │ View in Emulator UI            │
+├────────────────┼──────────────────────────────────┼────────────────────────────────┤
+│ Authentication │ localhost:9099                   │ http://localhost:3009/auth     │
+├────────────────┼──────────────────────────────────┼────────────────────────────────┤
+│ Functions      │ Failed to initialize (see above) │                                │
+├────────────────┼──────────────────────────────────┼────────────────────────────────┤
+│ Database       │ localhost:9000                   │ http://localhost:3009/database │
+└────────────────┴──────────────────────────────────┴────────────────────────────────┘
+  Emulator Hub running at localhost:4400
+  Other reserved ports: 4500
+
+Issues? Report them at https://github.com/firebase/firebase-tools/issues and attach the *-debug.log files.
+ 

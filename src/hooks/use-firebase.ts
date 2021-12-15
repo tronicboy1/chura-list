@@ -1,5 +1,11 @@
 import { useEffect, useState } from "react";
-import { getDatabase, ref, onValue, push } from "firebase/database";
+import {
+  getDatabase,
+  ref,
+  onValue,
+  push,
+  connectDatabaseEmulator,
+} from "firebase/database";
 
 import firebaseApp from "../services/firebase";
 
@@ -17,12 +23,16 @@ type ReturnObject = {
 const useFirebase: (path: string) => ReturnObject = (path) => {
   const [data, setData] = useState<ListModel>({});
   const [errors, setErrors] = useState<{} | null>(null);
+  const [database, _] = useState(() => {
+    const database = getDatabase(firebaseApp);
+    if (document.location.hostname === "localhost") {
+      connectDatabaseEmulator(database, "localhost", 9000);
+    }
+    return database;
+  });
 
   //logic for connecting to reference point in RealtimeDB
   useEffect(() => {
-    //connect to app database with config settings
-    const database = getDatabase(firebaseApp);
-
     //define what area of the database you want to access
     const pathRef = ref(database, path);
     onValue(
@@ -40,19 +50,18 @@ const useFirebase: (path: string) => ReturnObject = (path) => {
         setErrors(error);
       }
     );
-  }, [path]);
+  }, [path, database]);
 
   //logic to add new entrie to RealtimeDB
   const addItem: AddItemFunction = (newItem) => {
-    const database = getDatabase(firebaseApp);
     const pathRef = ref(database, path);
     push(pathRef, newItem);
-  }
+  };
 
   return {
     data,
     errors,
-    addItem
+    addItem,
   };
 };
 
