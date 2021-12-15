@@ -1,3 +1,7 @@
+## About this Project
+
+This project was created to demonstrate integration of Firebase Realtime Database with React. Feel free to use it however you like.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
