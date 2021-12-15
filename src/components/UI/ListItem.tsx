@@ -8,7 +8,7 @@ const ListItem: React.FC<{ item: ListItemModel }> = ({ item }) => {
     <li className={styles.li}>
       <h3>{item.title}</h3>
       <p>{item.contents}</p>
-      <p>{item.createdAt.toDateString()}</p>
+      <p>{new Date(item.createdAt).toLocaleDateString()}</p>
     </li>
   );
 };

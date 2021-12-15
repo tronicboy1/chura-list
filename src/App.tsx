@@ -1,25 +1,24 @@
 import React from "react";
+import useFirebase from "./hooks/use-firebase";
 import "./App.css";
 import List from "./components/List";
 import NewItem from "./components/NewItem";
 
-import ListModel from "./models/list-model";
-
 const App: React.FC = () => {
-  const DUMMY_DATA: ListModel = {
-    item1: {
-      title: "Item 1 Title",
-      contents: "Item 1 Contents",
-      createdAt: new Date(),
-    },
-  };
+  const { data, addItem } = useFirebase("List");
 
-  const addNewItem = (title: string, content: string) => {};
+  const addNewItem = (title: string, contents: string) => {
+    addItem({
+      title,
+      contents,
+      createdAt: new Date().toISOString(),
+    });
+  };
 
   return (
     <>
       <NewItem addNewItem={addNewItem} />
-      <List data={DUMMY_DATA} />
+      <List data={data} />
     </>
   );
 };

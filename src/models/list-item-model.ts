@@ -1,7 +1,7 @@
 type ListItemModel = {
   title: string;
   contents: string;
-  createdAt: Date;
+  createdAt: string;
 };
 
 export default ListItemModel;
